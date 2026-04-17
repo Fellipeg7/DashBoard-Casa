@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <div id="particles-js"></div>
+</head>
+<body>
+
+  <div id="loader">
+  <div class="spinner"></div>
+</div>
+
+<div class="app">
+
+  <!-- RELATÓRIOS -->
+   <section id="view-relatorios" class="view">
+  <h1>Relatórios</h1>
+
+  <div id="relatorio"></div>
+
+  <canvas id="graficoCategoria"></canvas>
+  <canvas id="graficoStatus"></canvas>
+  <canvas id="graficoTempo"></canvas>
+</section>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>💰 Finanças</h2>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <button id="toggleTheme">🌙 Tema</button>
+    
+
+    <nav>
+      <nav>
+        <a href="#" onclick="navigate('dashboard')">Dashboard</a>
+        <a href="#" onclick="navigate('contas')">Contas</a>
+        <a href="#" onclick="navigate('relatorios')">Relatórios</a>
+</nav>
+    </nav>
+  </aside>
+
+  <!-- CONTEÚDO -->
+  <main class="main">
+
+    <h1>Controle de Contas</h1>
+
+    <div class="form">
+      <input id="nome" placeholder="Nome">
+      <input id="valor" placeholder="Valor">
+      <input id="vencimento" type="date">
+      <button onclick="addConta()">Adicionar</button>
+    </div>
+
+    <canvas id="grafico"></canvas>
+
+    <ul id="lista"></ul>
+
+  </main>
+
+</div>
+
+<div id="resumo" class="resumo-cards"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60 },
+    color: { value: "#00ffc3" },
+    line_linked: { enable: true },
+    move: { speed: 2 }
+  }
+});
+</script>
+
+<script>
+const btn = document.getElementById("toggleTheme");
+
+btn.addEventListener("click", () => {
+  document.body.classList.toggle("light");
+
+  // salva preferência
+  if (document.body.classList.contains("light")) {
+    localStorage.setItem("theme", "light");
+  } else {
+    localStorage.setItem("theme", "dark");
+  }
+});
+
+// carregar tema salvo
+if (localStorage.getItem("theme") === "light") {
+  document.body.classList.add("light");
+}
+</script>
+
+<script src="/js/dashboard.js"></script>
+</body>
+</html>

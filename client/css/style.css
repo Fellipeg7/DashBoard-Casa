@@ -1,0 +1,276 @@
+:root {
+  --bg: #0b0b0f;
+  --sidebar: #111116;
+  --card: #17171c;
+
+  --text: #ffffff;
+  --subtext: #a1a1aa;
+
+  --primary: #7c3aed; /* roxo Nubank-like */
+  --hover: #1f1f26;
+
+  --border: #22232b;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* APP LAYOUT */
+.app {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* SIDEBAR (tipo Notion) */
+.sidebar {
+  width: 240px;
+  background: var(--sidebar);
+  padding: 20px;
+  border-right: 1px solid var(--border);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: var(--primary);
+}
+
+.sidebar a {
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--subtext);
+  margin-bottom: 5px;
+
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  background: var(--hover);
+  color: white;
+}
+
+/* BOTÃO TEMA */
+.sidebar button {
+  margin-bottom: 20px;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* HEADER */
+h1 {
+  font-size: 26px;
+  margin-bottom: 25px;
+}
+
+/* FORM (estilo app clean) */
+.form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.form input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+
+  background: var(--card);
+  color: white;
+
+  outline: none;
+}
+
+.form input:focus {
+  border-color: var(--primary);
+}
+
+/* BOTÃO PRIMARY (Nubank vibe) */
+button {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+
+  background: var(--primary);
+  color: white;
+  font-weight: 500;
+
+  transition: 0.2s;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+/* LISTA ESTILO NOTION */
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+li {
+  list-style: none;
+  padding: 14px;
+
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: 0.2s;
+}
+
+li:hover {
+  background: var(--hover);
+}
+
+/* TEXTO ITEM */
+li span {
+  font-size: 14px;
+}
+
+/* STATUS */
+.status {
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+.pago {
+  color: #22c55e;
+}
+
+.pendente {
+  color: #ef4444;
+}
+
+/* BOTÕES DO ITEM */
+li div button {
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+li div button:hover {
+  background: var(--hover);
+}
+
+/* CARDS (tipo Nubank resumo) */
+.resumo-cards {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 12px;
+
+  background: var(--card);
+  border: 1px solid var(--border);
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.card span {
+  font-size: 13px;
+  color: var(--subtext);
+}
+
+.card strong {
+  font-size: 20px;
+}
+
+/* CORES */
+.card.total strong {
+  color: #7c3aed;
+}
+
+.card.pagos strong {
+  color: #22c55e;
+}
+
+.card.pendentes strong {
+  color: #ef4444;
+}
+
+/* SCROLL BONITO */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a35;
+  border-radius: 10px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .sidebar h2 {
+    display: none;
+  }
+
+  .main {
+    padding: 20px;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  .light {
+  --bg: #f5f5f5;
+  --sidebar: #ffffff;
+  --card: #ffffff;
+
+  --text: #111;
+  --subtext: #555;
+
+  --primary: #7c3aed;
+  --hover: #eeeeee;
+
+  --border: #ddd;
+}
+
+
+}

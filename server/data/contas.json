@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1776396286156,
+    "nome": "Internet",
+    "valor": "99,99",
+    "vencimento": "2026-05-10",
+    "pago": false
+  },
+  {
+    "id": 1776396367590,
+    "nome": "Topic",
+    "valor": "500,00",
+    "vencimento": "2026-05-05",
+    "pago": false
+  },
+  {
+    "id": 1776433351751,
+    "nome": "Faculdade",
+    "valor": "1430",
+    "vencimento": "2026-05-05",
+    "pago": false
+  },
+  {
+    "id": 1776434521094,
+    "nome": "Água",
+    "valor": "400",
+    "vencimento": "2026-04-30",
+    "pago": false
+  }
+]
